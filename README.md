@@ -21,3 +21,9 @@ Predicts the next three months of demand for the products based on historical da
 
 ## What we learned
 - Technologies used
+
+## Prototype
+https://xd.adobe.com/view/6b1e5abb-63da-4bf4-5e55-99d98fb0f28c-1d2f/
+
+## Results (output csv)
+https://drive.google.com/file/d/1tZQJ8R8LIzYaZShG1Untl_6UsehCfvSB/view?usp=sharing
