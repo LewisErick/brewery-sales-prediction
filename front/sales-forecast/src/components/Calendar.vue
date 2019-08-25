@@ -98,7 +98,10 @@ export default {
       	var obj = JSON.parse(str)
       	for (var i = 2; i < obj.length; i++)
       	{
-      	  obj[i].date = new Date(obj[i].date)
+      	  var dateString = obj[i].date
+      	  var dateParts = dateString.split("/");
+      	  var dateObject = new Date(+dateParts[2]+2000, dateParts[1] - 1, +dateParts[0]);
+      	  obj[i].date = new Date(dateObject)
           this.predictInfo.push(obj[i])
           this.chartData.push([obj[i].date,parseInt(obj[i].sa_quantity)])
       	}

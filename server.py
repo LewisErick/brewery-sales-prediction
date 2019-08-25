@@ -10,14 +10,14 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 @app.route('/api/v1.0/mensaje')
 def create_task():
 	io = StringIO()
-	csvfile = open('input_data_train.csv', 'r')
+	csvfile = open('output_data_pred.csv', 'r')
 
-	fieldnames = ('location', 'product','date','sa_quantity','temp_mean','temp_max','temp_min','sunshine_quant','event','price')
+	fieldnames = ('index','location','product','date','temp_mean','temp_max','temp_min','sunshine_quant','event','price','sa_quantity')
 	reader = csv.DictReader( csvfile, fieldnames)
 	i = 0
 	next(reader)
 	for row in reader:
-		if i == 360:
+		if i == 1800:
 			break
 		json.dump(row, io)
 		io.write(',')
