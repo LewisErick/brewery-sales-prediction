@@ -1,3 +1,6 @@
+# Hack MTY
+## JDA Challenge
+
 ## Inspiration
 Keep it simple.
 
@@ -18,6 +21,7 @@ Predicts the next three months of demand for the products based on historical da
 - 31.09 MSE
 - 81.72% R2 Score on Holdout Set
 - Successful predictions exported as CSV
+- UI that displays and filters predictions for visualization
 
 ## What we learned
 - Technologies used
