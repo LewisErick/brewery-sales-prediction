@@ -17,9 +17,10 @@ def create_task():
 	i = 0
 	next(reader)
 	for row in reader:
-		if i == 6:
+		if i == 360:
 			break
 		json.dump(row, io)
+		io.write(',')
 		i = i + 1
 	return jsonify(io.getvalue())
 
