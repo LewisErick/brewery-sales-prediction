@@ -10,56 +10,67 @@ import { GChart } from 'vue-google-charts'
   />
 <br>
 <div id="bar">
-	<h3>Location</h3>
-	<h4 v-on:click="clear_array('location')">Clear</h4>
-	<select v-model="active_filters.location" multiple>
-	  <option>136</option>
-	  <option>152</option>
-	  <option>1193</option>
-	  <option>1258</option>
-	  <option>1300</option>
-	  <option>1355</option>
-	</select>
-	<h3>Product</h3>
-	<h4 v-on:click="clear_array('product')">Clear</h4>
-	<select v-model="active_filters.product" multiple>
-	  <option>1</option>
-	  <option>2</option>
-	  <option>3</option>
-	  <option>4</option>
-	  <option>5</option>
-	  <option>6</option>
-	</select>
-	<h3>Event</h3>
-	<h4 v-on:click="clear_array('event')">Clear</h4>
-	<select v-model="active_filters.event" multiple>
-	  	<option>New Year's Eve</option>
-		<option>2nd January (substitute day)</option>
-		<option>Orthodox Christmas Day</option>
-		<option>Orthodox New Year</option>
-		<option>Burns Night</option>
-		<option>Milad un Nabi (Mawlid)</option>
-		<option>2nd January</option>
-		<option>All Saints' Day </option>
-		<option>All Souls' Day </option>
-		<option>Ascension Day</option>
-		<option>Ashura</option>
-		<option>Assumption of Mary</option>
-		<option>Battle of the Boyne</option>
-		<option>Carnival/Ash Wednesday</option>
-		<option>Carnival/Shrove Tuesday</option>
-		<option>Epiphany</option>
-		<option>Chinese New Year</option>
-		<option>Christmas Day</option>
-		<option>Christmas Eve</option>
-		<option>Corpus Christi</option>
-		<option>Daylight Saving Time ends</option>
-		<option>Daylight Saving Time starts</option>
-		<option>December Solstice</option>
-		<option>Diwali/Deepavali</option>
-		<option>Dussehra</option>
-		<option>Early May Bank Holiday</option>
-	</select>
+	<div class="bar_option">
+		<h3>Location</h3>
+		<h4 v-on:click="clear_array('location')">Clear</h4>
+		<select v-model="active_filters.location" multiple>
+		  <option>136</option>
+		  <option>152</option>
+		  <option>1193</option>
+		  <option>1258</option>
+		  <option>1300</option>
+		  <option>1355</option>
+		</select>
+	</div>
+	<div class="bar_option">
+		<h3>Product</h3>
+		<h4 v-on:click="clear_array('product')">Clear</h4>
+		<select v-model="active_filters.product" multiple>
+		  <option>1</option>
+		  <option>2</option>
+		  <option>3</option>
+		  <option>4</option>
+		  <option>5</option>
+		  <option>6</option>
+		</select>
+	</div>
+	<div class="bar_option">
+		<h3>Event</h3>
+		<h4 v-on:click="clear_array('event')">Clear</h4>
+		<select v-model="active_filters.event" multiple>
+		  	<option>New Year's Eve</option>
+			<option>2nd January (substitute day)</option>
+			<option>Orthodox Christmas Day</option>
+			<option>Orthodox New Year</option>
+			<option>Burns Night</option>
+			<option>Milad un Nabi (Mawlid)</option>
+			<option>2nd January</option>
+			<option>All Saints' Day </option>
+			<option>All Souls' Day </option>
+			<option>Ascension Day</option>
+			<option>Ashura</option>
+			<option>Assumption of Mary</option>
+			<option>Battle of the Boyne</option>
+			<option>Carnival/Ash Wednesday</option>
+			<option>Carnival/Shrove Tuesday</option>
+			<option>Epiphany</option>
+			<option>Chinese New Year</option>
+			<option>Christmas Day</option>
+			<option>Christmas Eve</option>
+			<option>Corpus Christi</option>
+			<option>Daylight Saving Time ends</option>
+			<option>Daylight Saving Time starts</option>
+			<option>December Solstice</option>
+			<option>Diwali/Deepavali</option>
+			<option>Dussehra</option>
+			<option>Early May Bank Holiday</option>
+		</select>
+	</div>
+</div>
+<div id="filter">
+	<li v-for="date in filtered_dates">
+		{{ date.date }} - {{ date.sa_quantity }}
+	</li>
 </div>
 </div>
 </template>
